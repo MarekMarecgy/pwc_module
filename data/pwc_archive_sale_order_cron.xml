@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_achive_sale_order" model="ir.cron">
+        <field name="name">Archive sale orders if create_dater is older than 7 and is in state draft or canceled</field>
+        <field name="interval_number">24</field>
+        <field name="interval_type">hours</field>
+        <field name="active" eval="True"/>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="pwc_module.model_sale_order_archive"/>
+        <field name="code">model.sale_orders_to_archive()</field>
+        <field name="state">code</field>
+    </record>
+</odoo>
